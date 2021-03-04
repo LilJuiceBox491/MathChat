@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="/fav-normal.svg" type="image/svg+xml">
+  <title>ScratchChat - Moderated Chatting Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-image: url('https://images.unsplash.com/photo-1454117096348-e4abbeba002c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .main img {
+      max-width: 400px;
+      width: 80vw;
+    }
+
+    .main p {
+      color: rgb(20, 20, 20);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.4em;
+    }
+
+    .main a {
+      font-family: 'Montserrat', sans-serif;
+      padding: 0.7em;
+      background-color: lightgray;
+      color: black;
+      text-decoration: none;
+      border-radius: 0.4em;
+      transition: 0.15s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      margin: 0 0.5em;
+    }
+
+    .main a:hover {
+      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+      transition: 0.15s;
+    }
+
+    .main a:active {
+      background-color: lightgray;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <img src="wordmark-black.svg"><br><br>
+    <p>moderated realtime chat for Scratchers</p><br><br>
+    <a href="/chat">Sign In</a> <a href="/about">About ScratchChat</a><br><br><br>
+  </div>
+</body>
+
+</html>

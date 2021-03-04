@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <link rel="shortcut icon" href="/fav-normal.svg" type="image/svg+xml" id="favicon">
+  <title>ScratchChat</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/modal.css">
+</head>
+
+<body>
+  <!--
+  <div class="customize">
+    <div class="customize-options">
+      <label for="themeSelect">Select a theme:</label>
+      <select id="themeSelect">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+      <br>
+      <label for="fontSelect">Select a font:</label>
+      <select id="themeSelect">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </div>
+  </div>
+  -->
+  <a href="#" id="sidebarControl">
+    <span class="material-icons menu-m">
+      menu_open
+    </span>
+  </a>
+  <form action="" id="roomName" autocomplete="off">
+    <input id="r" autocomplete="off" placeholder="room name" data-lpignore="true" /><button class="padded-btn"><span class="material-icons">
+        send
+      </span></button>
+  </form>
+  <div class="sidebar">
+    <img src="/chat-bubble.svg" class="sidebar-img">
+    <div class="sidebar-text">
+      <span class="small-left">Current Room:</span><br>
+      <span id="roomTitle"></span>
+    </div>
+    <div class="bottom-sidebar">
+      <a href="#form" id="imgUpload" class="sidebar-btn">UPLOAD IMAGE</a>
+      <a href="#form" id="signOut" class="sidebar-btn">SIGN OUT</a>
+      <a id="changeRoom" class="sidebar-btn" href="#form">SWITCH ROOM</a>
+      <a href="#form" id="changeTheme" class="sidebar-btn">TOGGLE THEME</a>
+       <a id="modButton" class="sidebar-btn" onclick="window.open('https://scratch.mit.edu/users/SC_Interviews/')">BECOME A MODERATOR</a>
+      <a href="#form" id="adminPanel" class="sidebar-btn">ADMIN PANEL</a>
+      
+    </div>
+  </div>
+  <ul id="messages"></ul>
+  <p id="typingSection"></p>
+  <span id="messageCharCount">0/500 Characters Used</span>
+  <form action="" id="form" autocomplete="off">
+    <input id="m" autocomplete="off" data-lpignore="true" />
+    <button id="send"><span class="material-icons">
+        send
+      </span></button>
+  </form>
+  <div class="blocker"></div>
+  <div class="register">
+    <div class="center-register">
+      <img src="/wordmark-black.svg" class="register-img">
+      <h1>Sign in with Scratch</h1>
+      <form action="" id="username" autocomplete="off">
+        <input id="username-input" autocomplete="off" placeholder="username"></input>
+        <button><span class="material-icons">
+            login
+          </span></button><br>
+        <br>
+        <div class="loader"></div>
+      </form>
+      <div class="scratchverifier">
+        Double tap, copy, and paste code onto Scratch Profile as a comment, then complete verification =)
+        <br><input id="svCode" disabled title="double-click this, copy it, and paste it on your Scratch profile as a comment!"></input><br><br>
+        <a href="#" id="completeSV" title="click this after you have copied the above code and pasted it on your Scratch profile!">Complete Verification</a><br><br>
+        <span class="tos">By clicking the button above, you agree to the <a href="/tos" target="_blank">ScratchChat Terms of Service</a>.</span>
+      </div>
+    </div>
+  </div>
+  <input type="file" id="pseudoUpload" />
+  <div id="reportConfirmation" class="modal">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Report Confirmation</h2>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to report this comment?</p>
+      <div class="buttons"><button class="yes">Yes</button><button class="no">No</button></div>
+    </div>
+  </div>
+
+  </div>
+
+  <script src="https://unpkg.com/keyboardjs@2.6.4/dist/keyboard.min.js" charset="utf-8"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js" id="runtime">
+  </script>
+</body>
+</html>

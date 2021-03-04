@@ -1,0 +1,511 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.2s !important;
+}
+
+:root {
+  --text-primary: #0a0a0a;
+  --background-primary: white;
+  --background-secondary: rgb(230, 230, 230);
+  --background-tertiary: lightgray;
+  --transparent-tertiary: rgba(211, 211, 211, 0.2);
+  --transparent: rgba(0, 0, 0, 0.02);
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+  overflow-x: hidden;
+}
+
+#pseudoUpload {
+  display: none;
+}
+
+#form {
+  background: var(--background-secondary);
+  padding: 3px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  z-index: 1;
+}
+
+#form input {
+  border: none;
+  padding: 10px;
+  width: 60%;
+  margin-right: 0%;
+  margin-left: 5%;
+  background-color: transparent;
+  color: var(--text-primary);
+  transition: 0.2s;
+  transform: translateY(-10px);
+  border-bottom: solid 2px transparent;
+  font-family: 'Heebo', sans-serif;
+}
+
+#form input:hover {
+  border-bottom: solid 2px var(--text-primary);
+}
+
+#form button {
+  width: 3em;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  color: #ffa600;
+}
+
+#form button:hover {
+  color: var(--text-primary);
+}
+
+.padded-btn {
+  padding: 1em;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
+#messages li {
+  padding-top: 0.5em;
+  padding-left: 2em;
+  max-width: 90%;
+}
+
+#messages li p {
+  background: var(--background-secondary);
+  padding: 10px;
+  margin-left: 40px;
+  margin-right: 20px;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  width: max-content;
+  max-width: 70%;
+}
+
+.yourMessage {
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 0 !important;
+  background: #ffa600 !important;
+  color: black !important;
+}
+
+.quote {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 0.2em solid rgba(0, 0, 0, 0.5);
+  padding: 0.5em;
+  border-radius: 15px;
+}
+
+#messages li:last-child {
+  margin-bottom: 6em;
+}
+
+#m:focus {
+  border-bottom: solid 2px #1C1F22;
+  transition: 0.2s;
+}
+
+#form button:active {
+  color: #2274A5;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
+.register-img {
+  max-width: 500px;
+  width: 80%;
+  margin-bottom: 5vh;
+}
+
+.center-register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register, #roomName {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 21;
+  padding: 10px;
+  text-align: center;
+}
+
+.register {
+  background-color: var(--background-primary);
+  width: 100vw;
+  height: 100vh;
+}
+
+.register h1 {
+  text-align: center;
+  font-size: 1.5em;
+  padding-bottom: 1em;
+}
+
+#username-input, #r {
+  border: none;
+  border-bottom: 2px solid #ffa600;
+  font-family: 'Heebo', sans-serif;
+  color: var(--text-primary);
+  height: 2.3em;
+  background-color: var(--background-tertiary);
+  border-radius: 40px;
+  padding: 20px;
+}
+
+#username button, #roomName button {
+  background: transparent;
+  border: none;
+  color: #ffa600;
+  transform: translateY(7px);
+}
+
+#svCode {
+  border: none;
+}
+
+.scratchverifier {
+  opacity: 0;
+  width: 90vw;
+}
+
+#completeSV {
+  color: var(--text-primary);
+  font-family: 'Heebo', sans-serif;
+  height: 2.3em;
+  background-color: var(--background-tertiary);
+  border-radius: 40px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  background: rgb(255, 166, 0);
+  background: linear-gradient(90deg, rgb(228, 182, 0) 0%, rgba(255, 166, 0, 1) 100%);
+}
+
+.tos {
+  font-size: 0.8em;
+}
+
+.tos a {
+  color: #ffa600;
+}
+
+.tos a:hover {
+  text-decoration: none;
+}
+
+#roomName {
+  display: none;
+}
+
+.blocker {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.pfp {
+  z-index: 1;
+  float: left;
+  position: relative;
+  top: 0;
+  left: -0.75em;
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.sidebar-btn {
+  background: var(--background-tertiary);
+  padding: 1em;
+  text-transform: uppercase;
+  position: fixed;
+  text-decoration: none;
+  border-radius: 1.2em;
+  color: var(--text-primary);
+  padding: 0.5em;
+  width: 15%;
+  right: 2.5vw;
+  max-width: 216px;
+  text-transform: lowercase;
+}
+
+.sidebar-btn:hover {
+  background-color: var(--background-primary);
+}
+
+#changeRoom {
+  bottom: 8em;
+}
+
+#changeTheme {
+  bottom: 5em;
+}
+
+#signOut {
+  bottom: 11em;
+}
+
+#imgUpload {
+  bottom: 14em;
+}
+
+#modButton {
+  bottom: 17em;
+}
+
+#adminPanel {
+  bottom: 20em;
+  background-color: #ffa600;
+  display: none;
+}
+
+#adminPanel:hover {
+  bottom: 20em;
+  background-color: #694400;
+}
+
+
+
+#typingSection {
+  position: fixed;
+  color: var(--text-primary);
+  font-family: 'Heebo', sans-serif;
+  padding-left: 20px;
+  bottom: 5em;
+  font-size: 0.8em;
+  opacity: 0.55;
+  background-color: var(--background-primary);
+}
+
+#messageCharCount {
+  position: fixed;
+  bottom: 0.9em;
+  right: 2em;
+  z-index: 2;
+}
+
+.flashing {
+  animation-name: flash;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+}
+
+.mention {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.yourMessage .mention {
+  color: black !important;
+}
+
+.mention:hover {
+  text-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
+}
+
+.sidebar {
+  width: 22vw;
+  height: 100vh;
+  max-width: 300px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.sidebar-img {
+  width: 50%;
+  margin-top: 20px;
+}
+
+.sidebar-text {
+  color: var(--text-primary);
+  text-align: left;
+  padding-left: 10%;
+  font-weight: 700;
+}
+
+.small-left {
+  font-weight: normal;
+}
+
+#roomTitle {
+  font-weight: 900;
+  font-size: 3em;
+  text-transform: capitalize;
+}
+
+#sidebarControl {
+  display: none;
+}
+
+#svCode {
+  background-color: transparent;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  opacity: 0;
+  z-index: 100;
+}
+
+.loader:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border-top: 2px solid #6e31ff;
+  border-right: 2px solid transparent;
+  animation: spinner .6s linear infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.image {
+  overflow: hidden;
+  max-height: 30vh;
+}
+
+p img.uploaded {
+  max-width: 112%;
+  margin: -13px;
+  height: auto;
+}
+
+p img:hover {
+  filter: brightness(0.7);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 1050px) {
+  .sidebar {
+    display: none;
+    width: 100vw;
+    max-width: 101vw;
+    z-index: 2;
+  }
+
+  .sidebar-btn {
+    width: 90%;
+    transform: translateX(50%);
+    right: 50%;
+  }
+
+  #messageCharCount {
+    right: -2.8em;
+  }
+
+  #sidebarControl {
+    display: block;
+    color: #6e31ff;
+    z-index: 3;
+    background: var(--background-secondary);
+    padding: 15px;
+    height: 54px;
+    width: 54px;
+    border-radius: 100%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    transform: rotate(0deg);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+.button {
+  background : rgba(41,41,41,0.5);
+  border : 0px;
+  -wekkit-backdrop-filter : blur(3px);
+  backdrop-filter : blur(3px);
+  border-radius : 500px;
+  padding : 10px;
+  width : 100px;
+  font-weight : bold;
+}
+.ban {
+  position : fixed;
+  left : 10px;
+  top : 10px;
+  color : red;
+  z-index : 500;
+}
+.unban {
+  position : fixed;
+  left : 120px;
+  top : 10px;
+  color : lime;
+  z-index : 500;
+}
+
+.comment-container {
+  background-color: var(--transparent-tertiary);
+}
+
+.reportbtn {
+  background-color: transparent;
+  transition-duration: 0.4s;
+}
+
+.reportbtn:hover {
+  background-color: var(--background-tertiary);
+}
